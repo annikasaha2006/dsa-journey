@@ -17,16 +17,58 @@ bool Palindrome(int num){
 
 }
 
+int GCD(int a,int b){
+    while(b!=0){
+        int remainder = a%b;
+        a=b;
+        b=remainder;
+
+    }
+    return a;
+    
+
+}
+
 
 int main(){
     int num=0;
-    cout<<"Enter value";
+    cout<<"choose 1 for Palindrome, 2 for GCD"<<endl;
+    
+
+    
 
     cin>>num;
-    if (Palindrome(num)){
-        cout<<"The number is palindrome";
-    }
-    else{
-        cout<<"The number is not palindrome";
+    switch (num){
+        case 1: { 
+            int n;
+            cout<<"Enter the number to check palindrome"<<endl;
+            cin>>n;
+            if (Palindrome(n)){
+                cout<<"The number is palindrome";
+            }
+            else{
+                cout<<"The number is not palindrome";
+            }
+        
+            break;
+        }
+
+        case 2: {
+
+        
+            int a;
+            int b;
+            cout<<"enter two numbers to check their GCD";
+            cin>>a>>b;
+            cout<<"The GCD is :"<<GCD(a,b);
+            break;
+        }
+        
+        default:
+            cout<<"Wrong input";
+            break;
+
     }
 }
+    
+    
